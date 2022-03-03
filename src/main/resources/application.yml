@@ -1,0 +1,16 @@
+﻿server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          cloneOnStart: false
+          uri: https://github.com/luidoc/spring-cloud-config-repo
+          default-label: master
+  security:
+    user:
+      name: root
+      password: password
+encrypt:
+  key: asdfajazdfjalasdfasdf
