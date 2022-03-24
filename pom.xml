@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+	<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -16,7 +16,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2021.0.0</spring-cloud.version>
-		<spring-native.version>0.11.2</spring-native.version>
+		<spring-native.version>0.11.3</spring-native.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
@@ -41,7 +41,7 @@
         <dependency>
           <groupId>org.springframework.experimental</groupId>
           <artifactId>spring-native</artifactId>
-          <version>0.11.2</version>
+          <version>0.11.3</version>
         </dependency>
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
@@ -78,7 +78,7 @@
         <plugin>
             <groupId>org.springframework.experimental</groupId>
             <artifactId>spring-aot-maven-plugin</artifactId>
-            <version>0.11.2</version>
+            <version>0.11.3</version>
             <executions>
                 <execution>
                     <id>generate</id>
@@ -119,7 +119,7 @@
 			<id>native</id>
 			<properties>
 				<repackage.classifier>exec</repackage.classifier>
-				<native-buildtools.version>0.9.3</native-buildtools.version>
+				<native-buildtools.version>0.9.4</native-buildtools.version>
 			</properties>
 			<dependencies>
 				<dependency>
