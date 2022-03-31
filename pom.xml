@@ -15,7 +15,7 @@
 	<description>Probando spring cloud server</description>
 	<properties>
 		<java.version>11</java.version>
-		<spring-cloud.version>2021.0.1</spring-cloud.version>
+		<spring-cloud.version>2021.0.2-SNAPSHOT</spring-cloud.version>
 		<spring-native.version>0.11.3</spring-native.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -101,7 +101,7 @@
     <repository>
         <id>spring-release</id>
         <name>Spring release</name>
-        <url>https://repo.spring.io/release</url>
+        <url>https://repo.spring.io/snapshot</url>
     </repository>
 </repositories>	
 
@@ -110,7 +110,7 @@
     <pluginRepository>
         <id>spring-release</id>
         <name>Spring release</name>
-        <url>https://repo.spring.io/release</url>
+        <url>https://repo.spring.io/snapshot</url>
     </pluginRepository>
 </pluginRepositories>
 
