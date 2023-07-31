@@ -1,0 +1,31 @@
+﻿server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          cloneOnStart: false
+          uri: https://github.com/luidoc/spring-cloud-config-repo
+          default-label: master
+  security:
+    user:
+      name: root
+      password: password
+  application:
+    name: proba
+  profiles:
+    active: dev,mysql
+encrypt:
+  key: asdfajazdfjalasdfasdf
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
