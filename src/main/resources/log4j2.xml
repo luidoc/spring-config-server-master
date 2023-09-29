@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Properties>
+        <!-- Ruta base de logs de la app -->
+        <Property name="codapp">config_ws</Property>
+        <Property name="path">${sys:apps_log_path}</Property>
+        <!-- Servidor -->
+        <Property name="server">${env:HOSTNAME}</Property>
+        <!-- Nivel de traza minimo -->
+        <Property name="logLevel">DEBUG</Property>
+        <!-- Tamano maximo del fichero de traza antes de rotar el fichero -->
+        <Property name="fileSize">200MB</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- Apender para log en la consola -->
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %-5p [%t] %m %ex%n"/>
+        </Console>
+        <RollingFile name="ERROR-JSON" fileName="${path}/${server}-ERR_${codapp}.json" filePattern="${path}/${server}-ERR_${codapp}-%d{yyyyMMdd}-%i.json.gz">
+            <!-- Configurar los parámetros en funcion de lo que se necesite -->
+            <JsonTemplateLayout eventTemplateUri="classpath:ERR-Layout.json"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="${fileSize}" />
+            </Policies>
+        </RollingFile>
+        <RollingFile name="TRA-JSON" fileName="${path}/${server}-TRA_${codapp}.json" filePattern="${path}/${server}-TRA_${codapp}-%d{yyyyMMdd}-%i.json.gz">
+            <!-- Configurar los parámetros en funcion de lo que se necesite -->
+            <JsonTemplateLayout eventTemplateUri="classpath:TRA-Layout.json"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="${fileSize}" />
+            </Policies>
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+        <Logger name="org.springframework" level="${logLevel}">
+            <AppenderRef ref="STDOUT" />
+            <AppenderRef ref="ERROR-JSON" level="warn" />
+        </Logger>
+        <!-- Logger para trazas de debug -->
+        <Root level="${logLevel}">
+            <AppenderRef ref="TRA-JSON"/>
+        </Root>
+    </Loggers>
+
+</Configuration>

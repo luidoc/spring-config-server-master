@@ -1,0 +1,39 @@
+{
+  "sistema": {
+    "$resolver": "pattern",
+    "pattern": "${codapp}",
+    "stackTraceEnabled": false
+  },
+  "usuario": {
+    "$resolver": "pattern",
+    "pattern": "%X{username}",
+    "stackTraceEnabled": false
+  },
+  "@timestamp": {
+    "$resolver": "timestamp",
+    "pattern": {
+      "format": "yyyy-MM-dd HH:mm:ss.ms"
+    }
+  },
+  "criticidad": {
+    "$resolver": "pattern",
+    "pattern": "%X{criticidad}",
+    "stackTraceEnabled": false
+  },
+  "codigo.error": {
+    "$resolver": "pattern",
+    "pattern": "%X{codigoError}",
+    "stackTraceEnabled": false
+  },
+
+  "descripcion": {
+    "$resolver": "exception",
+    "field": "message",
+    "stackTraceEnabled": false
+  },
+  "observacion": {
+    "$resolver": "message",
+    "stringified": true,
+    "stackTraceEnabled": false
+  }
+}

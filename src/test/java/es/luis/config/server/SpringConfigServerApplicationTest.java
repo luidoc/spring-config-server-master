@@ -1,10 +1,10 @@
 package es.luis.config.server;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class SpringConfigServerApplicationTest {
 
-    @org.junit.jupiter.api.Test
-    void main() {
+    @Test
+    void contextLoads() {
     }
 }
