@@ -9,7 +9,7 @@
     "pattern": "%X{username}",
     "stackTraceEnabled": false
   },
-  "@timestamp": {
+  "fechahora": {
     "$resolver": "timestamp",
     "pattern": {
       "format": "yyyy-MM-dd HH:mm:ss.ms"
